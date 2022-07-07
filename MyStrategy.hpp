@@ -6,12 +6,17 @@
 #include "model/Order.hpp"
 #include "model/Constants.hpp"
 
+#include "maximilian/Logic.hpp"
+
 class MyStrategy {
 public:
     MyStrategy(const model::Constants& constants);
     model::Order getOrder(const model::Game& game, DebugInterface* debugInterface);
     void debugUpdate(DebugInterface& debugInterface);
     void finish();
+
+private:
+    Logic logic;
 };
 
 #endif

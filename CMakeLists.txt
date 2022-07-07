@@ -9,6 +9,9 @@ if(WIN32)
 endif()
 
 set(HEADERS
+    "maximilian/Logic.hpp"
+    "maximilian/Field.hpp"
+
     "DebugInterface.hpp"
     "MyStrategy.hpp"
     "Stream.hpp"
@@ -41,6 +44,9 @@ set(HEADERS
     "model/Zone.hpp"
 )
 set (SRC
+    "maximilian/Logic.cpp"
+    "maximilian/Field.cpp"
+
     "DebugInterface.cpp"
     "MyStrategy.cpp"
     "Stream.cpp"
