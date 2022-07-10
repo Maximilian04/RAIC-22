@@ -12,6 +12,7 @@ set(HEADERS
     "maximilian/Logic.hpp"
     "maximilian/Field.hpp"
     "Operators.hpp"
+    "RTConstants.hpp"
 
     "DebugInterface.hpp"
     "MyStrategy.hpp"
@@ -48,6 +49,7 @@ set (SRC
     "maximilian/Logic.cpp"
     "maximilian/Field.cpp"
     "Operators.cpp"
+    "RTConstants.cpp"
 
     "DebugInterface.cpp"
     "MyStrategy.cpp"

@@ -7,6 +7,7 @@
 #include "model/Constants.hpp"
 
 #include "maximilian/Logic.hpp"
+#include "RTConstants.hpp"
 
 class MyStrategy {
 public:
