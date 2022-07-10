@@ -6,3 +6,4 @@
 using namespace model;
 
 void operator+=(Vec2& a, const Vec2& b);
+void operator/=(Vec2& a, const double& b);
