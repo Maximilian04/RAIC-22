@@ -12,5 +12,6 @@ void operator/=(Vec2& a, const double& b);
 Vec2 operator+(const Vec2& a, const Vec2& b);
 Vec2 operator-(const Vec2& a, const Vec2& b);
 Vec2 operator*(const Vec2& a, const double& b);
+Vec2 operator/(const Vec2& a, const double& b);
 
 double abs(const Vec2& a);

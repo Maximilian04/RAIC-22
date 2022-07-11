@@ -22,6 +22,10 @@ Vec2 operator*(const Vec2& a, const double& b) {
     return Vec2(a.x * b, a.y * b);
 }
 
+Vec2 operator/(const Vec2& a, const double& b) {
+    return Vec2(a.x / b, a.y / b);
+}
+
 double abs(const Vec2& a) {
     return std::sqrt(a.x * a.x + a.y * a.y);
 }
