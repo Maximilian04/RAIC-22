@@ -8,6 +8,7 @@
 #include <vector>
 #include <cmath>
 #include <iostream>
+#include <functional>
 
 using namespace std;
 
@@ -17,8 +18,10 @@ public:
     Step(const model::Unit& unit, const model::Game& game); // DO NOT use with "new"
     ~Step();
 
-    double leaveTheBestHealth();
+    double leaveTheBest(function<double(Step&)> metric);
     Vec2 getActVelocity();
+
+    double getHealth();
 
     int rotate;
     double boostDir; // radians

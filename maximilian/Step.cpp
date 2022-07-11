@@ -33,24 +33,24 @@ Step::Step(const model::Unit& unit, const model::Game& game) :
 
 }
 
-double Step::leaveTheBestHealth() {
+double Step::leaveTheBest(function<double(Step&)> metric) {
     if (nextSteps.size() == 0) {
-        return health;
+        return metric(*this);
     } else if (nextSteps.size() == 1) {
-        return nextSteps[0]->leaveTheBestHealth();
+        return nextSteps[0]->leaveTheBest(metric);
     } else {
-        vector<double> childrensHealth;
-        double bestHealthI = 0;
+        vector<double> childrensScore;
+        double bestScoreI = 0;
         for (int i = 0; i < nextSteps.size(); ++i) {
-            childrensHealth.push_back(nextSteps[i]->leaveTheBestHealth());
-            if (childrensHealth[i] > childrensHealth[bestHealthI]) {
-                bestHealthI = i;
+            childrensScore.push_back(nextSteps[i]->leaveTheBest(metric));
+            if (childrensScore[i] > childrensScore[bestScoreI]) {
+                bestScoreI = i;
             }
         }
 
-        Step* left = nextSteps[bestHealthI];
+        Step* left = nextSteps[bestScoreI];
         for (int i = 0; i < nextSteps.size(); ++i) {
-            if (i == bestHealthI) continue;
+            if (i == bestScoreI) continue;
             delete nextSteps[i];
         }
 
@@ -70,6 +70,10 @@ Vec2 Step::getActVelocity() {
     }
 
     return nextSteps[0]->vel;
+}
+
+double Step::getHealth() {
+    return health;
 }
 
 Step::~Step() {

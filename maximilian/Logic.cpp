@@ -46,7 +46,9 @@ model::UnitOrder Logic::getOrder(const model::Game& game, DebugInterface* debugI
 
             Step curStep(unit, game);
             stepDfs(5, &curStep);
-            curStep.leaveTheBestHealth();
+            curStep.leaveTheBest([](Step& step) {
+                return step.getHealth();
+            });
 
             //targetVelocity = model::Vec2(enemyPtr->position.x - unit.position.x, enemyPtr->position.y - unit.position.y);
             targetVelocity = curStep.getActVelocity();
