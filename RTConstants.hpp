@@ -12,6 +12,8 @@
 #include <string>
 #include <vector>
 
+#define PI 3.1415926535
+
 class RTConstants {
 public:
     // Number of ticks per game second
