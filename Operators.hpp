@@ -7,4 +7,5 @@ using namespace model;
 
 void operator+=(Vec2& a, const Vec2& b);
 void operator/=(Vec2& a, const double& b);
+Vec2 operator+(const Vec2& a, const Vec2& b);
 Vec2 operator*(const Vec2& a, const double& b);
