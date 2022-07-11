@@ -11,6 +11,7 @@ endif()
 set(HEADERS
     "maximilian/Logic.hpp"
     "maximilian/Field.hpp"
+    "maximilian/Step.hpp"
     "Operators.hpp"
     "RTConstants.hpp"
 
@@ -48,6 +49,7 @@ set(HEADERS
 set (SRC
     "maximilian/Logic.cpp"
     "maximilian/Field.cpp"
+    "maximilian/Step.cpp"
     "Operators.cpp"
     "RTConstants.cpp"
 

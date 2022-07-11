@@ -5,8 +5,13 @@
 
 #include "Operators.hpp"
 
+#include <functional>
 #include <iostream>
 #include <vector>
+#include <cmath>
+
+#include "Step.hpp"
+#include "RTConstants.hpp"
 
 using namespace std;
 
