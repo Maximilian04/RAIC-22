@@ -1,8 +1,11 @@
+#pragma once
+
 #include "Stream.hpp"
 #include "model/Obstacle.hpp"
 #include "model/SoundProperties.hpp"
 #include "model/Vec2.hpp"
 #include "model/WeaponProperties.hpp"
+
 #include <optional>
 #include <sstream>
 #include <stdexcept>
