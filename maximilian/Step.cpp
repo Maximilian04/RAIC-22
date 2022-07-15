@@ -56,6 +56,8 @@ double Step::leaveTheBest(function<double(Step&)> metric) {
 
         nextSteps.clear();
         nextSteps.push_back(left);
+
+        return childrensScore[bestScoreI];
     }
 }
 
