@@ -5,8 +5,8 @@ Step::Step(Step* par, int _rotate, double _boostDir, bool _shoot) :
     projectiles(par->projectiles), health(par->health) {
     par->nextSteps.push_back(this);
 
-    angle = par->angle + RTConstants::rotationSpeed / RTConstants::ticksPerSecond * (double)rotate; //TODO rotate in aim is different
-    vel = par->vel + model::Vec2(cos(boostDir), sin(boostDir)) * (RTConstants::unitAcceleration / RTConstants::ticksPerSecond);
+    angle = par->angle + MODIF * RTConstants::rotationSpeed / RTConstants::ticksPerSecond * (double)rotate; //TODO rotate in aim is different
+    vel = par->vel + model::Vec2(cos(boostDir), sin(boostDir)) * (MODIF * RTConstants::unitAcceleration / RTConstants::ticksPerSecond);
 
     Vec2 circleCenter = Vec2(cos(angle), sin(angle)) * ((RTConstants::maxUnitForwardSpeed - RTConstants::maxUnitBackwardSpeed) / 2);
     double circleRadius = (RTConstants::maxUnitForwardSpeed + RTConstants::maxUnitBackwardSpeed) / 2;
@@ -16,10 +16,10 @@ Step::Step(Step* par, int _rotate, double _boostDir, bool _shoot) :
     }
     vel = velNormed + circleCenter;
 
-    pos = par->pos + vel / RTConstants::ticksPerSecond;
+    pos = par->pos + vel * (MODIF / RTConstants::ticksPerSecond);
 
     for (model::Projectile& bullet : projectiles) {
-        bullet.position += bullet.velocity / RTConstants::ticksPerSecond;
+        bullet.position += bullet.velocity * (MODIF / RTConstants::ticksPerSecond);
 
         if (abs(bullet.position - pos) < RTConstants::unitRadius) {
             health -= RTConstants::weapons[bullet.weaponTypeIndex].projectileDamage;

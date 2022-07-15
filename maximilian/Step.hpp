@@ -10,6 +10,8 @@
 #include <iostream>
 #include <functional>
 
+#define MODIF (3.0)
+
 using namespace std;
 
 class Step {
