@@ -78,6 +78,10 @@ double Step::getHealth() {
     return health;
 }
 
+Vec2 Step::getPos() {
+    return pos;
+}
+
 Step::~Step() {
     for (Step* next : nextSteps) {
         delete next;

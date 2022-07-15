@@ -22,6 +22,7 @@ public:
     Vec2 getActVelocity();
 
     double getHealth();
+    Vec2 getPos();
 
     int rotate;
     double boostDir; // radians
